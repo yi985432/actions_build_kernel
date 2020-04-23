@@ -56,12 +56,12 @@ jobs:
        
        - name: Zip GSI  
          run: |
-              sudo zip –q –r GSI.zip ./output
+              sudo zip –r -y GSI.zip output/
        
        - name: Upload GSI to BitSend
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit ./output/GSI.zip
+              ./transfer bit output/GSI.zip
 
          
             
