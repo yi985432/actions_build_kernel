@@ -56,12 +56,13 @@ jobs:
        
        - name: Zip GSI  
          run: |
-              sudo tar -czf GSI.tar.gz home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/*
-       
+              mkdir final
+              zip -r final/GSI.zip /home/runner/work/actions_build_ErfanGSIs/actions_build_ErfanGSIs/ErfanGSIs/output/
+
        - name: Upload GSI to BitSend
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit output/GSI.tar.gz
+              ./transfer bit final/GSI.zip
 
          
             
