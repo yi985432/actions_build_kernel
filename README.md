@@ -10,7 +10,7 @@
 ## Note: due to the bug test when uploading artifacts, it was decided to change it to FQ for bitsend (bitsend. JP) uploaded to Japan. Please delete the previous fork and restart the fork ##
 
 ## Attached: ROM supported by erfangsi ##
-##(fill in the ROM name exactly the same, and the next ROM will be the same! Generic means (class) native) ##
+## (fill in the ROM name exactly the same, and the next ROM will be the same! Generic means (class) native) ##
 ### 9 Pie： ### 
 > ColorOS	
 Flyme
@@ -29,6 +29,6 @@ ZenUI
 MIUI	
 OxygenOS
 Pixel
-### 11 R： ##
+### 11 R： ###
 > Generic	
 Pixel
