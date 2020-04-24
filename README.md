@@ -1,16 +1,16 @@
 # actions_build_ErfanGSIs #
 
-## 这是一个基于Github Actions制作的自动跑ErfanGSI的脚本。 ##
-## 步骤如下： ##
-### 首先，fork这个仓库。 ###
-### 接着，编辑build_ErfanGSIs.yml文件，把其中的ROM_URL改成你要做gsi的底包（注意直链）；还有ROM_NAME改成你的ROM名称。 ###
-### 然后，按Star小星星就可以开始了！ ###
-### 最后，在Upload GSI里展开，看Download Link链接，访问即可下载。 ###
+## This is a script for running erfangsi automatically based on GitHub actions. ##
+## The steps are as follows： ##
+### First of all, fork is the warehouse. ###
+### Next, edit the file build ﹣ erfangsis.yml, and change the ROM ﹣ URL to the bottom package where you want to do GSI (note the direct link); and change the ROM ﹣ name to your ROM name. ###
+### Then, press star to start! ###
+### Finally, expand in the upload GSI, look at the download link link link, and visit to download. ###
 
-## 注意：由于上传artifacts的时候测试会卡BUG，于是决定改成上传到日本的BitSend（bitsend.jp）需要FQ，之前Fork的请删除重新Fork ##
+## Note: due to the bug test when uploading artifacts, it was decided to change it to FQ for bitsend (bitsend. JP) uploaded to Japan. Please delete the previous fork and restart the fork ##
 
-## 附：ErfanGSI支持的ROM ##
-## （ROM_NAME里填一摸一样的，下的ROM也要一样！Generic是（类）原生的意思） ##
+## Attached: ROM supported by erfangsi ##
+##(fill in the ROM name exactly the same, and the next ROM will be the same! Generic means (class) native) ##
 ### 9 Pie： ### 
 > ColorOS	
 Flyme
