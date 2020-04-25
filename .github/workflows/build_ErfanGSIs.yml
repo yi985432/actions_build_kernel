@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/V11.0.8.0.PFHCNXM/miui_VIOLET_V11.0.8.0.PFHCNXM_3b7c27c482_9.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: https://firmware.meizu.com/Firmware/Flyme/16xs/8.0.0.0/cn/20191204175904/56374b1b/update.zip
+  ROM_NAME: Flyme
   TZ: Asia/Shanghai
 
 jobs:
