@@ -57,7 +57,7 @@ jobs:
        
        - name: 7z the MIUI GSI  
          run: |
-              IMG_NAME=$(ls -F ./SimpleGSIs/output/ | grep txt | sed -i 's/.txt//')
+              IMG_NAME=$(ls ./SimpleGSIs/output/ | grep "txt" | sed 's/.txt//')
               mkdir final
               7z a final/"IMG_NAME".zip /home/runner/work/Actions-SimpleGSIs/Actions-SimpleGSIs/SimpleGSIs/output/
 
