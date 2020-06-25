@@ -44,9 +44,9 @@ jobs:
        - name: Download SimpleGSIs Source Code
          run: axel -n 5 -o ./ https://xiaopei.yaoxiaonie.workers.dev/Acitons/SimpleGSIs.zip
        
-       - name: Decompression SimpleGSIs.zip
+       - name: Decompression SimpleGSIs.7z
          run: |
-              7z x ./SimpleGSIs.zip -o"./"
+              7z x ./SimpleGSIs.7z -o"./"
               sudo chmod -R 777 SimpleGSIs
               cd SimpleGSIs
               sudo bash setup.sh
