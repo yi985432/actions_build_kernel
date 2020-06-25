@@ -42,7 +42,7 @@ jobs:
             sudo -E apt-get -qq install git openjdk-8-jdk wget axel p7zip p7zip-full
        
        - name: Download SimpleGSIs Source Code
-         run: axel -n 5 -o ./ https://xiaopei.yaoxiaonie.workers.dev/Acitons/SimpleGSIs.zip
+         run: axel -n 5 -o ./ https://xiaopei.yaoxiaonie.workers.dev/Acitons/SimpleGSIs.7z
        
        - name: Decompression SimpleGSIs.7z
          run: |
