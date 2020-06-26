@@ -59,7 +59,7 @@ jobs:
          run: |
               IMG_NAME=$(ls ./SimpleGSIs/output | grep "txt" | sed 's/.txt//')
               mkdir Final
-              7z a Final/"$IMG_NAME".7z SimpleGSIs/output/*
+              7z a Final/"$IMG_NAME".7z ./SimpleGSIs/output/*
 
        - name: Upload GSI to GoFile
          run: |
