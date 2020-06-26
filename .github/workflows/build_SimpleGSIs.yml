@@ -39,10 +39,10 @@ jobs:
        - name: Initialization environment
          run: |
             sudo -E apt-get -qq update
-            sudo -E apt-get -qq install git openjdk-8-jdk wget axel p7zip p7zip-full
+            sudo -E apt-get -qq install git openjdk-8-jdk wget wget p7zip p7zip-full
        
        - name: Download SimpleGSIs Source Code
-         run: axel -n 3 -o ./ https://xiaopei.yaoxiaonie.workers.dev/Acitons/SimpleGSIs.7z
+         run: wget -P ./ "https://xiaopei.yaoxiaonie.workers.dev/Acitons/SimpleGSIs.7z"
        
        - name: Decompression SimpleGSIs.7z
          run: |
