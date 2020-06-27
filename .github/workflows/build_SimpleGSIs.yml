@@ -63,27 +63,27 @@ jobs:
               mkdir Final
               mkdir Final/Aonly
               mkdir Final/AB
-              mkdir Final/Aonly/output
-              mkdir Final/AB/output
+              mkdir Final/AB-output
+              mkdir Final/A-output
               mv "SimpleGSIs/output/$AGSI" Final/Aonly
               mv "SimpleGSIs/output/$AConfig" Final/Aonly
-              mv "SimpleGSIs/output/$ABGSI" Final/Aonly
-              mv "SimpleGSIs/output/$ABConfig" Final/Aonly
+              mv "SimpleGSIs/output/$ABGSI" Final/AB
+              mv "SimpleGSIs/output/$ABConfig" Final/AB
               AIMG_NAME=$(ls ./Final/Aonly | grep "txt" | sed 's/.txt//')
               ABIMG_NAME=$(ls ./Final/AB | grep "txt" | sed 's/.txt//')
-              7z a Final/Aonly/output/"$AIMG_NAME".7z ./Final/Aonly/*
+              7z a Final/A-output/"$AIMG_NAME".7z ./Final/Aonly/*
               sudo rm -rf ./Final/Aonly/*.img
-              7z a Final/AB/output/"$ABIMG_NAME".7z ./Final/AB/*
+              7z a Final/AB-output/"$ABIMG_NAME".7z ./Final/AB/*
               sudo rm -rf ./Final/AB/*.img
 
        - name: Upload AonlyGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit Final/Aonly/output/*.7z
+              ./transfer bit Final/A-output/*.7z
 
        - name: Upload ABGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit Final/AB/output/*.7z
+              ./transfer bit Final/AB-output/*.7z
          
             
