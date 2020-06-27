@@ -50,8 +50,6 @@ jobs:
               sudo chmod -R 777 SimpleGSIs
               cd SimpleGSIs
               sudo bash setup.sh
-              sudo sed -i '8c Aonly=true' url2GSI.sh
-              sudo sed -i '7c AB=true' url2GSI.sh
        
        - name: Download Stock Rom & Generate GSI
          run: sudo ./SimpleGSIs/url2GSI.sh $ROM_URL $ROM_NAME
@@ -77,10 +75,12 @@ jobs:
               sudo rm -rf ./Final/Aonly/*.img
               7z a Final/AB/output/"$ABIMG_NAME".7z ./Final/AB/*
               sudo rm -rf ./Final/AB/*.img
+
        - name: Upload AonlyGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
               ./transfer bit Final/Aonly/output/*.7z
+
        - name: Upload ABGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
