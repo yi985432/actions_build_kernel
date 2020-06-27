@@ -50,7 +50,8 @@ jobs:
               sudo chmod -R 777 SimpleGSIs
               cd SimpleGSIs
               sudo bash setup.sh
-              sudo sed -i '7c AB=false' url2GSI.sh
+              sudo sed -i '8c Aonly=true' url2GSI.sh
+              sudo sed -i '7c AB=true' url2GSI.sh
        
        - name: Download Stock Rom & Generate GSI
          run: sudo ./SimpleGSIs/url2GSI.sh $ROM_URL $ROM_NAME
