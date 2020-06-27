@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://bigota.d.miui.com/20.6.23/miui_MIMAX3_20.6.23_7aafa75464_10.0.zip
+  ROM_URL: https://hugeota.d.miui.com/20.6.23/miui_RAPHAEL_20.6.23_5c97acac79_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
@@ -27,7 +27,7 @@ jobs:
        - name: Checkout
          uses: actions/checkout@master
        
-       - name: Clean Up
+       - name: Free up space
          run: |
            docker rmi `docker images -q`
            sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
@@ -54,7 +54,7 @@ jobs:
        - name: Download Stock Rom & Generate GSI
          run: sudo ./SimpleGSIs/url2GSI.sh $ROM_URL $ROM_NAME
        
-       - name: 7z the MIUI GSI  
+       - name: Compress the MiuiGSI Aonly & AB
          run: |
               AGSI=$(ls ./SimpleGSIs/output | grep "Aonly" | grep "img")
               AConfig=$(ls ./SimpleGSIs/output | grep "Aonly" | grep "txt")
@@ -79,11 +79,11 @@ jobs:
        - name: Upload AonlyGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit Final/A-output/*.7z
+              ./transfer gof Final/A-output/*.7z
 
        - name: Upload ABGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit Final/AB-output/*.7z
+              ./transfer gof Final/AB-output/*.7z
          
             
