@@ -46,29 +46,29 @@ jobs:
        
        - name: Decompression YaoXiaonieGSIs.7z
          run: |
-              7z x ./SimpleGSIs.7z -o"./"
+              7z x ./YaoXiaonieGSIs.7z -o"./"
               sudo chmod -R 777 YaoXiaonieGSIs
               cd YaoXiaonieGSIs
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./SimpleGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+         run: sudo ./YaoXiaonieGSIs/url2GSI.sh $ROM_URL $ROM_NAME
        
        - name: Compress the MiuiGSI Aonly & AB
          run: |
-              AGSI=$(ls ./SimpleGSIs/output | grep "Aonly" | grep "img")
-              AConfig=$(ls ./SimpleGSIs/output | grep "Aonly" | grep "txt")
-              ABGSI=$(ls ./SimpleGSIs/output | grep "AB" | grep "img")
-              ABConfig=$(ls ./SimpleGSIs/output | grep "AB" | grep "txt")
+              AGSI=$(ls ./YaoXiaonieGSIs/output | grep "Aonly" | grep "img")
+              AConfig=$(ls ./YaoXiaonieGSIs/output | grep "Aonly" | grep "txt")
+              ABGSI=$(ls ./YaoXiaonieGSIs/output | grep "AB" | grep "img")
+              ABConfig=$(ls ./YaoXiaonieGSIs/output | grep "AB" | grep "txt")
               mkdir Final
               mkdir Final/Aonly
               mkdir Final/AB
               mkdir Final/AB-output
               mkdir Final/A-output
-              mv "SimpleGSIs/output/$AGSI" Final/Aonly
-              mv "SimpleGSIs/output/$AConfig" Final/Aonly
-              mv "SimpleGSIs/output/$ABGSI" Final/AB
-              mv "SimpleGSIs/output/$ABConfig" Final/AB
+              mv "YaoXiaonieGSIs/output/$AGSI" Final/Aonly
+              mv "YaoXiaonieGSIs/output/$AConfig" Final/Aonly
+              mv "YaoXiaonieGSIs/output/$ABGSI" Final/AB
+              mv "YaoXiaonieGSIs/output/$ABConfig" Final/AB
               AIMG_NAME=$(ls ./Final/Aonly | grep "txt" | sed 's/.txt//')
               ABIMG_NAME=$(ls ./Final/AB | grep "txt" | sed 's/.txt//')
               7z a Final/A-output/"$AIMG_NAME".7z ./Final/Aonly/*
