@@ -79,11 +79,11 @@ jobs:
        - name: Upload AonlyGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer gof Final/A-output/*.7z
+              ./transfer bit Final/A-output/*.7z
 
        - name: Upload ABGSI to GoFile
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer gof Final/AB-output/*.7z
+              ./transfer bit Final/AB-output/*.7z
          
             
