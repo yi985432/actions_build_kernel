@@ -1,4 +1,4 @@
-name: build_SimpleGSIs
+name: build_YaoXiaonieGSIs
 
 on:
 #  release:
@@ -42,13 +42,13 @@ jobs:
             sudo -E apt-get -qq install git openjdk-8-jdk wget wget p7zip p7zip-full
        
        - name: Download SimpleGSIs Source Code
-         run: wget -P ./ "https://xiaopei.yaoxiaonie.workers.dev/Acitons/SimpleGSIs.7z"
+         run: wget -P ./ "https://xiaopei.yaoxiaonie.workers.dev/Acitons/YaoXiaonieGSIs.7z"
        
-       - name: Decompression SimpleGSIs.7z
+       - name: Decompression YaoXiaonieGSIs.7z
          run: |
               7z x ./SimpleGSIs.7z -o"./"
-              sudo chmod -R 777 SimpleGSIs
-              cd SimpleGSIs
+              sudo chmod -R 777 YaoXiaonieGSIs
+              cd YaoXiaonieGSIs
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
