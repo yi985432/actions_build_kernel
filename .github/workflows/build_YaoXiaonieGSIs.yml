@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://hugeota.d.miui.com/20.6.23/miui_DAVINCI_20.6.23_a2055841eb_10.0.zip
+  ROM_URL: https://hugeota.d.miui.com/20.6.23/miui_RAPHAEL_20.6.23_5c97acac79_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
