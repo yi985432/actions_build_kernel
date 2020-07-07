@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://hugeota.d.miui.com/20.7.6/miui_UMI_20.7.6_93693604d7_11.0.zip
+  ROM_URL: https://hugeota.d.miui.com/20.7.7/miui_MIMIX2S_20.7.7_f6544d4954_10.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
 
@@ -72,11 +72,11 @@ jobs:
               AIMG_NAME=$(ls ./Final/Aonly | grep "txt" | sed 's/.txt//')
               ABIMG_NAME=$(ls ./Final/AB | grep "txt" | sed 's/.txt//')
               7z a Final/A-output/"$AIMG_NAME".7z ./Final/Aonly/*
-              AonlyCrc32=$(./YaoXiaonieGSIs/scripts/crc.sh ./Final/A-output/*.7z)
+              AonlyCrc32=$(./YaoXiaonieGSIs/scripts/crc32.sh ./Final/A-output/*.7z)
               mv ./Final/A-output/"$AIMG_NAME".7z ./Final/A-output/"$AIMG_NAME"-"$AonlyCrc32".7z
               sudo rm -rf ./Final/Aonly/*.img
               7z a Final/AB-output/"$ABIMG_NAME".7z ./Final/AB/*
-              ABCrc32=$(./YaoXiaonieGSIs/scripts/crc.sh ./Final/AB-output/*.7z)
+              ABCrc32=$(./YaoXiaonieGSIs/scripts/crc32.sh ./Final/AB-output/*.7z)
               mv ./Final/AB-output/"$AIMG_NAME".7z ./Final/AB-output/"$AIMG_NAME"-"$ABCrc32".7z
               sudo rm -rf ./Final/AB/*.img
 
