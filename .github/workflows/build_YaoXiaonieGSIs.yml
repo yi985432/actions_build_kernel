@@ -73,11 +73,11 @@ jobs:
               ABIMG_NAME=$(ls ./Final/AB | grep "txt" | sed 's/.txt//')
               7z a Final/A-output/"$AIMG_NAME".7z ./Final/Aonly/*
               AonlyMD5=$(md5sum ./Final/A-output/*.7z | awk '{print $1}' | cut -c 1-8)
-              mv ./Final/A-output/"$AIMG_NAME".7z ./Final/A-output/"$AIMG_NAME"-("$AonlyMD5").7z
+              mv ./Final/A-output/"$AIMG_NAME".7z ./Final/A-output/"$AIMG_NAME"-"$AonlyMD5".7z
               sudo rm -rf ./Final/Aonly/*.img
               7z a Final/AB-output/"$ABIMG_NAME".7z ./Final/AB/*
               ABMD5=$(md5sum ./Final/AB-output/*.7z | awk '{print $1}' | cut -c 1-8)
-              mv ./Final/AB-output/"$ABIMG_NAME".7z ./Final/AB-output/"$ABIMG_NAME"-("$ABMD5").7z
+              mv ./Final/AB-output/"$ABIMG_NAME".7z ./Final/AB-output/"$ABIMG_NAME"-"$ABMD5".7z
               sudo rm -rf ./Final/AB/*.img
 
        - name: Upload AonlyGSI to GoFile
