@@ -17,7 +17,7 @@ env:
   ROM_URL: https://hugeota.d.miui.com/20.7.6/miui_UMI_20.7.6_93693604d7_11.0.zip
   ROM_NAME: MIUI
   TZ: Asia/Shanghai
-
+  ToolVersion: Beta6
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -41,8 +41,8 @@ jobs:
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install openjdk-8-jdk wget p7zip-full valgrind
        
-       - name: Download SimpleGSIs Source Code
-         run: wget -P ./ "https://xiaopei.yaoxiaonie.workers.dev/Acitons/YaoXiaonieGSIs.7z"
+       - name: Download YaoXiaonieGSIs Source Code
+         run: wget -P ./ https://xiaopei.yaoxiaonie.workers.dev/Acitons/YaoXiaonieGSIs-"$ToolVersion".7z
        
        - name: Decompression YaoXiaonieGSIs.7z
          run: |
