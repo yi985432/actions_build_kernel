@@ -46,7 +46,7 @@ jobs:
        
        - name: Decompression YaoXiaonieGSIs.7z
          run: |
-              7z x ./YaoXiaonieGSIs.7z -o"./"
+              7z x ./YaoXiaonieGSIs-"$ToolVersion".7z -o"./"
               sudo chmod -R 777 YaoXiaonieGSIs
               cd YaoXiaonieGSIs
               sudo bash setup.sh
