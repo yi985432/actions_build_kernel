@@ -14,8 +14,10 @@ on:
     types: [started]
     
 env:
-  KERNEL_URL: https://hugeota.d.miui.com/20.7.6/miui_UMI_20.7.6_93693604d7_11.0.zip
-  BUILD_URL: 
+  KERNEL_URL: https://github.com/yaoxiaonie/android_kernel_xiaomi_gemini.git
+  GCC_ARM64: https://github.com/yaoxiaonie/arm64-gcc.git
+  GCC_ARM: https://github.com/yaoxiaonie/arm64-gcc.git
+  CLANG: https://github.com/yaoxiaonie/clang.git
   BUILD_USER: Actions
   BUILD_HOST: MistyRain
 jobs:
@@ -33,11 +35,18 @@ jobs:
             sudo -E apt-get -qq install -y openssl ccache bc bash git-core gnupg build-essential zip curl make automake autogen autoconf autotools-dev libtool shtool python  m4 gcc libtool zlib1g-dev flex gcc-aarch64-linux-gnu libssl-dev
        
        - name: Clone the kernel code
-         run: git clone $KERNEL_URL
+         run: |
+            sudo git clone $KERNEL_URL
+            KERNEL_NAME=$(ls)
+            
+       - name: Clone the cross compiler
+         run: |
+            sudo git clone $GCC_ARM
+            sudo git clone $GCC_ARM64
+            sudo git clone $CLANG
        
        - name: Start build kernel
          run: |
-            KERNEL_NAME=$(ls)
-            sudo curl $URL -o ./ | chmod 777 build_kernel.sh
-            sudo ./build_kernel.sh "$KERNEL_NAME"
+            sudo curl https://github.com/yaoxiaonie/actions_build_kernel/releases/download/1.0/build-kernel.sh -o ./ | chmod 777 build-kernel.sh
+            sudo ./build_kernel.sh "$KERNEL_NAME" "$DEFCONFIG_NAME" "$BUILD_USER" "$BUILD_HOST"
             
