@@ -15,8 +15,8 @@ on:
     
 env:
   KERNEL_URL: https://github.com/yaoxiaonie/android_kernel_xiaomi_gemini.git
-  GCC_ARM64: https://github.com/yaoxiaonie/arm64-gcc.git gcc-arm64
-  GCC_ARM: https://github.com/yaoxiaonie/arm32-gcc.git gcc-arm32
+  GCC_ARM64: https://github.com/yaoxiaonie/arm64-gcc.git
+  GCC_ARM: https://github.com/yaoxiaonie/arm32-gcc.git
   CLANG: https://github.com/yaoxiaonie/clang.git
   GCC_ARM64_TYPE: aarch64-elf
   GCC_ARM_TYPE: arm-eabi
@@ -38,17 +38,16 @@ jobs:
        
        - name: Clone the kernel code
          run: |
-            sudo git clone $KERNEL_URL
-            KERNEL_NAME=$(ls)
+            sudo git clone $KERNEL_URL kernel
             
        - name: Clone the cross compiler
          run: |
-            sudo git clone $GCC_ARM
-            sudo git clone $GCC_ARM64
-            sudo git clone $CLANG
+            sudo git clone $GCC_ARM gcc-arm32
+            sudo git clone $GCC_ARM64 gcc-arm64
+            sudo git clone $CLANG clang
        
        - name: Start build kernel
          run: |
-            sudo curl https://github.com/yaoxiaonie/actions_build_kernel/releases/download/1.1/build-kernel.sh -o ./ | chmod 777 build-kernel.sh
-            sudo ./build_kernel.sh "$KERNEL_NAME" "$DEFCONFIG_NAME" "$BUILD_USER" "$BUILD_HOST" "$GCC_ARM64_TYPE" "$GCC_ARM_TYPE"
+            sudo curl https://github.com/yaoxiaonie/actions_build_kernel/releases/download/1.1/build-kernel.sh -o ./build-kernel.sh | chmod 777 build-kernel.sh
+            sudo ./build_kernel.sh "kernel" "$DEFCONFIG_NAME" "$BUILD_USER" "$BUILD_HOST" "$GCC_ARM64_TYPE" "$GCC_ARM_TYPE"
             
