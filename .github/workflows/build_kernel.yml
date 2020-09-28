@@ -20,6 +20,7 @@ env:
   CLANG: https://github.com/yaoxiaonie/clang.git
   GCC_ARM64_TYPE: aarch64-elf
   GCC_ARM_TYPE: arm-eabi
+  DEFCONFIG_NAME: gemini_defconfig
   BUILD_USER: Actions
   BUILD_HOST: MistyRain
 jobs:
