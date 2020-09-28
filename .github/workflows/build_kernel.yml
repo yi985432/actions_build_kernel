@@ -15,11 +15,11 @@ on:
     
 env:
   KERNEL_URL: https://github.com/yaoxiaonie/android_kernel_xiaomi_gemini.git
-  GCC_ARM64: https://github.com/kdrag0n/aarch64-elf-gcc.git
-  GCC_ARM: https://github.com/kdrag0n/arm-eabi-gcc.git
+  GCC_ARM64: https://bitbucket.org/matthewdalex/aarch64-linux-android-8.x.git.git
+  GCC_ARM: https://bitbucket.org/matthewdalex/arm-linux-androideabi-8.x.git
   CLANG: https://github.com/yaoxiaonie/clang.git
-  GCC_ARM64_TYPE: aarch64-elf
-  GCC_ARM_TYPE: arm-eabi
+  GCC_ARM64_TYPE: aarch64-linux-android
+  GCC_ARM_TYPE: arm-linux-androideabi
   DEFCONFIG_NAME: gemini_defconfig
   BUILD_USER: Actions
   BUILD_HOST: MistyRain
