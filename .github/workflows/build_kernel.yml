@@ -15,9 +15,11 @@ on:
     
 env:
   KERNEL_URL: https://github.com/yaoxiaonie/android_kernel_xiaomi_gemini.git
-  GCC_ARM64: https://github.com/yaoxiaonie/arm64-gcc.git
-  GCC_ARM: https://github.com/yaoxiaonie/arm64-gcc.git
+  GCC_ARM64: https://github.com/yaoxiaonie/arm64-gcc.git gcc-arm64
+  GCC_ARM: https://github.com/yaoxiaonie/arm32-gcc.git gcc-arm32
   CLANG: https://github.com/yaoxiaonie/clang.git
+  GCC_ARM64_TYPE: aarch64-elf
+  GCC_ARM_TYPE: arm-eabi
   BUILD_USER: Actions
   BUILD_HOST: MistyRain
 jobs:
@@ -47,6 +49,6 @@ jobs:
        
        - name: Start build kernel
          run: |
-            sudo curl https://github.com/yaoxiaonie/actions_build_kernel/releases/download/1.0/build-kernel.sh -o ./ | chmod 777 build-kernel.sh
-            sudo ./build_kernel.sh "$KERNEL_NAME" "$DEFCONFIG_NAME" "$BUILD_USER" "$BUILD_HOST"
+            sudo curl https://github.com/yaoxiaonie/actions_build_kernel/releases/download/1.1/build-kernel.sh -o ./ | chmod 777 build-kernel.sh
+            sudo ./build_kernel.sh "$KERNEL_NAME" "$DEFCONFIG_NAME" "$BUILD_USER" "$BUILD_HOST" "$GCC_ARM64_TYPE" "$GCC_ARM_TYPE"
             
