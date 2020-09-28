@@ -48,6 +48,7 @@ jobs:
        
        - name: Start build kernel
          run: |
-            sudo curl https://github.com/yaoxiaonie/actions_build_kernel/releases/download/1.1/build-kernel.sh -o ./build-kernel.sh | chmod 777 build-kernel.sh
+            sudo curl https://github.com/yaoxiaonie/actions_build_kernel/releases/download/1.1/build-kernel.sh -o ./build-kernel.sh
+            chmod 777 build-kernel.sh
             sudo ./build_kernel.sh "kernel" "$DEFCONFIG_NAME" "$BUILD_USER" "$BUILD_HOST" "$GCC_ARM64_TYPE" "$GCC_ARM_TYPE"
             
