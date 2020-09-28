@@ -15,8 +15,8 @@ on:
     
 env:
   KERNEL_URL: https://github.com/yaoxiaonie/android_kernel_xiaomi_gemini.git
-  GCC_ARM64: https://github.com/yaoxiaonie/arm64-gcc.git
-  GCC_ARM: https://github.com/yaoxiaonie/arm32-gcc.git
+  GCC_ARM64: https://github.com/kdrag0n/aarch64-elf-gcc.git
+  GCC_ARM: https://github.com/kdrag0n/arm-eabi-gcc.git
   CLANG: https://github.com/yaoxiaonie/clang.git
   GCC_ARM64_TYPE: aarch64-elf
   GCC_ARM_TYPE: arm-eabi
