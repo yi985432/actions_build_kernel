@@ -31,12 +31,7 @@ jobs:
     steps:
        - name: Checkout
          uses: actions/checkout@master
-           
-       - name: Initialization environment
-         run: |
-            sudo -E apt-get -qq update
-            sudo -E apt-get -qq install -y openssl ccache bc bash git-core gnupg build-essential zip curl make automake autogen autoconf autotools-dev libtool shtool python  m4 gcc libtool zlib1g-dev flex gcc-aarch64-linux-gnu libssl-dev
-       
+         
        - name: Clone the kernel code
          run: |
             sudo git clone $KERNEL_URL kernel
